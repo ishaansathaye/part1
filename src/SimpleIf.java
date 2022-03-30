@@ -14,6 +14,11 @@ public class SimpleIf {
      * TO DO: Write an if statement to determine if the avg is larger than the threshold and
      * return true if so, false otherwise
      */
+    for (int i = 0; i < avg; i++) {
+      if (avg > threshold) {
+        return true;
+      }
+    }
 
     return false; // A bit pessimistic!
   }
@@ -31,6 +36,13 @@ public class SimpleIf {
      * TO DO: Write an if statement to determine which average is larger and return
      * that value.
      */
+    if (avg1 > avg2) {
+      return avg1;
+    } else if (avg2 > avg1) {
+      return avg2;
+    } else if (avg1 == avg2) {
+      return avg1;
+    }
 
     return 0; // Clearly not correct, but testable.
   }

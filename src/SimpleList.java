@@ -20,6 +20,7 @@ public class SimpleList {
    *         threshold, false otherwise
    */
   public static List<Boolean> applicantAcceptable(List<Integer> scores, int threshold) {
+    
     List<Boolean> highScores = new LinkedList<Boolean>();
 
     /*
@@ -31,6 +32,14 @@ public class SimpleList {
      * 
      * Use a FOR-EACH loop.
      */
+    for (int score : scores) {
+      if (score > threshold) {
+        highScores.add(true);
+      } else {
+        highScores.add(false);
+      }
+    }
+
     return highScores;
   }
 }

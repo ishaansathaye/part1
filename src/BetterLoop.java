@@ -11,6 +11,15 @@ public class BetterLoop {
     /*
      * Use a FOR-EACH loop. How would you keep count of the number of scores over 85?
      */
+    int counter = 0;
+    for (int score : scores) {
+      if (score > 85) {
+        counter++;
+      }
+    }
+    if (counter >= 4) {
+      return true;
+    }
 
     return false;
   }
@@ -27,6 +36,11 @@ public class BetterLoop {
      * A "normal" for-loop can sometimes be more useful than a for-each loop. How would
      * you solve this problem with a for loop?
      */
-    return 0.0;
+    double sum = 0.0;
+    for (int i = 0; i < scores.length - 1; i++) {
+      sum += scores[i];
+    }
+    double average = sum / (scores.length - 1);
+    return average;
   }
 }

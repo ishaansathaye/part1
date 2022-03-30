@@ -26,8 +26,9 @@ public class TestCases
    public void testAnalyzeApplicant3()
    {
       /* TO DO: Write one more valid test case. */
-
+      //New test case
       assertFalse(SimpleIf.analyzeApplicant(92, 99));
+      assertFalse(SimpleIf.analyzeApplicant(92, 92));
    }
 
    @Test
@@ -68,7 +69,8 @@ public class TestCases
    {
       /* TO DO: Write one more valid test case to make sure that
          this function is not just returning 7. */
-
+      //New test case
+      assertEquals(1045, SimpleLoop.sum(90, 100));
       assertEquals(10, SimpleLoop.sum(1, 4));
    }
 
@@ -99,6 +101,10 @@ public class TestCases
    public void testSimpleArray3()
    {
       /* TO DO: Add a new test case. */
+      //New test case
+      assertArrayEquals(
+         new boolean[] {false, false, false, false, false, false},
+         SimpleArray.applicantAcceptable(new int[] {80, 85, 89, 92, 76, 81}, 100));
 
       assertArrayEquals(
            new boolean[] {false, false, false, true, true, false},
@@ -129,6 +135,11 @@ public class TestCases
       /* TO DO: Add a new test case. */
       List<Integer> input = Arrays.asList(80, 85, 89, 92, 76, 81);
       assertEquals(expected, SimpleList.applicantAcceptable(input, 88));
+
+      //New test case
+      List<Boolean> expected2 = Arrays.asList(false, true, false, false, false, false);
+      List<Integer> input2 = Arrays.asList(98, 100, 1, 23, 19, 98);
+      assertEquals(expected2, SimpleList.applicantAcceptable(input2, 99));
    }
 
    ////////////////////////////////////////////////////////////
@@ -151,8 +162,17 @@ public class TestCases
    public void testFourOver85_3()
    {
       /* TO DO: Write a valid test case where the expected result is false. */
+      //New test case
+      assertFalse(BetterLoop.atLeastFourOver85(new int[] {92, 1, 2, 3, 4, 92}));
       assertFalse(BetterLoop.atLeastFourOver85(new int[] {85, 80, 85, 75, 80, 92}));
    }
+
+   // @Test
+   // public void testAverage()
+   // {
+   //    assertEquals(BetterLoop.average(new int[] {89, 93, 100, 39, 84, 63}),
+   //       (double) (89 + 93 + 100 + 39 + 84) / 5, DELTA);
+   // }
 
    ////////////////////////////////////////////////////////////
    //                    ExampleMap Tests                    //
