@@ -218,6 +218,36 @@ public class TestCases
    @Test
    public void testExampleMap2() {
       /* TO DO: Write another valid test case. */
-      assertFalse(true);
+      // New test case
+      Map<String, List<CourseGrade>> courseListsByStudent = new HashMap<>();
+      courseListsByStudent.put("S5",
+         Arrays.asList(
+            new CourseGrade("CPE 123", 92),
+            new CourseGrade("CPE 101", 90)));
+      courseListsByStudent.put("S4",
+         Arrays.asList(
+            new CourseGrade("CPE 101", 86),
+            new CourseGrade("CPE 202", 80),
+            new CourseGrade("CPE 203", 76),
+            new CourseGrade("CPE 225", 80)));
+      courseListsByStudent.put("S1",
+         Arrays.asList(
+            new CourseGrade("CPE 123", 100),
+            new CourseGrade("CPE 203", 100),
+            new CourseGrade("CPE 471", 100),
+            new CourseGrade("CPE 473", 100),
+            new CourseGrade("CPE 476", 100),
+            new CourseGrade("CPE 572", 100)));
+      courseListsByStudent.put("S2",
+         Arrays.asList(
+            new CourseGrade("CPE 123", 99),
+            new CourseGrade("CPE 203", 91),
+            new CourseGrade("CPE 471", 86)));
+
+      List<String> expected = Arrays.asList("S1");
+
+      assertEquals(new HashSet<>(expected),
+         new HashSet<>(ExampleMap.highScoringStudents(
+            courseListsByStudent, 99)));
    }
 }

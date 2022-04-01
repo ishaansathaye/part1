@@ -16,13 +16,18 @@ public class ExampleMap {
   public static List<String> highScoringStudents(Map<String, List<CourseGrade>> scoresByApplicantName, int scoreThreshold) {
     List<String> final_names = new LinkedList<String>();
     for (String name : scoresByApplicantName.keySet()) {
+      int total = 0;
       List<CourseGrade> grades = scoresByApplicantName.get(name);
+      int target = grades.size();
       for (CourseGrade grade : grades) {
-        if (grade.getScore() < scoreThreshold) {
-          return new LinkedList<>();
+        if (grade.getScore() > scoreThreshold) {
+          total++;
         }
       }
+      if (total == target) {
+        final_names.add(name);
+      }
     }
-    return null;
+    return final_names;
   }
 }
